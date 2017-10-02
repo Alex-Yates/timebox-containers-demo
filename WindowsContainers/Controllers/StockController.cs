@@ -30,7 +30,7 @@ namespace WindowsContainers.Controllers
             var isLowStock = m_StockRepository.LowStockWarning(id);
             var message = m_StockRepository.GetQuantity(id).ToString();
 
-            return isLowStock ? message : message + " (This item is running low on stock)";
+            return isLowStock ? message + " (This item is running low on stock)" : message ;
         }
 
         // POST api/stock
